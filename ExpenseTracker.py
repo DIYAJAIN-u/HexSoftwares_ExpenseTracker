@@ -4,7 +4,7 @@ print("Simple Expense Tracker")
 expenses = []
 
 while True:
-    print('\n------------Select an option-------------')
+    print('\n------------ Select an choice -------------')
     print('\n1. Add Expense')
     print('2. View Expenses')
     print('3. Total Expenses')
@@ -13,6 +13,7 @@ while True:
     choice = input("Enter your choice: ").strip()
 
     if choice == '1':
+     while True:
         category = input("Enter category (Food/Travel/Shopping/etc): ").strip().lower()
         name = input("Enter expense name: ").strip()
         amount = float(input("Enter amount: "))
@@ -27,6 +28,11 @@ while True:
 
         print("Expense added!")
         print(f"\nAdded Expense: {name} - ₹{amount}")
+
+        more = input("\nAdd another expense? (y/n): ").strip().lower()
+
+        if more != 'y':
+            break
 
     elif choice == '2':
         if not expenses:
